@@ -1,0 +1,564 @@
+/* =========================================
+   TAX CALCULATOR
+========================================= */
+
+.tax-calculator-container {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    gap: 24px;
+    margin-top: 25px;
+}
+
+
+/* =========================================
+   CARDS
+========================================= */
+
+.tax-calculator-card,
+.tax-result-card,
+.classified-income-card {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 28px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+    border: 1px solid #eef0f4;
+}
+
+.classified-income-card {
+    margin-top: 24px;
+}
+
+
+/* =========================================
+   SECTION HEADING
+========================================= */
+
+.section-heading {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 25px;
+}
+
+.section-heading h2 {
+    margin: 0 0 5px;
+    color: #111827;
+    font-size: 20px;
+}
+
+.section-heading p {
+    margin: 0;
+    color: #6b7280;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.section-icon {
+    width: 44px;
+    height: 44px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: #eff6ff;
+    color: #2563eb;
+
+    font-size: 18px;
+}
+
+
+/* =========================================
+   FORM
+========================================= */
+
+#taxCalculatorForm {
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #374151;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 13px 14px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    color: #111827;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+
+    outline: none;
+
+    transition: 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.10);
+}
+
+
+/* =========================================
+   CURRENCY INPUT
+========================================= */
+
+.input-with-prefix {
+    position: relative;
+}
+
+.input-with-prefix span {
+    position: absolute;
+
+    left: 14px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #6b7280;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    pointer-events: none;
+}
+
+.input-with-prefix input {
+    padding-left: 34px;
+}
+
+
+/* Remove number arrows */
+
+.input-with-prefix input::-webkit-outer-spin-button,
+.input-with-prefix input::-webkit-inner-spin-button {
+    margin: 0;
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.calculator-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 28px;
+}
+
+.secondary-btn,
+.primary-btn {
+    border: none;
+
+    padding: 12px 18px;
+
+    border-radius: 10px;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.secondary-btn {
+    background: #f3f4f6;
+    color: #374151;
+}
+
+.secondary-btn:hover {
+    background: #e5e7eb;
+}
+
+.primary-btn {
+    background: #2563eb;
+    color: #ffffff;
+}
+
+.primary-btn:hover {
+    background: #1d4ed8;
+}
+
+.primary-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+
+/* =========================================
+   EMPTY RESULT
+========================================= */
+
+.result-empty {
+    min-height: 300px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 20px;
+}
+
+.result-empty > i {
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 18px;
+
+    border-radius: 50%;
+
+    background: #f3f4f6;
+
+    color: #9ca3af;
+
+    font-size: 25px;
+}
+
+.result-empty h3 {
+    margin: 0 0 8px;
+
+    color: #374151;
+
+    font-size: 17px;
+}
+
+.result-empty p {
+    max-width: 280px;
+
+    margin: 0;
+
+    color: #6b7280;
+
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   RESULTS
+========================================= */
+
+.result-content {
+    width: 100%;
+}
+
+.result-row {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 14px 0;
+
+    color: #6b7280;
+
+    font-size: 14px;
+}
+
+.result-row strong {
+    color: #111827;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.result-divider {
+    height: 1px;
+
+    margin: 8px 0;
+
+    background: #e5e7eb;
+}
+
+
+/* =========================================
+   MAIN RESULT
+========================================= */
+
+.result-highlight {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin: 12px 0;
+
+    padding: 18px;
+
+    border-radius: 12px;
+
+    background: #eff6ff;
+}
+
+.result-highlight span {
+    color: #1e3a8a;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.result-highlight strong {
+    color: #2563eb;
+
+    font-size: 20px;
+    font-weight: 700;
+}
+
+
+/* =========================================
+   NOTICE
+========================================= */
+
+.calculation-notice {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 10px;
+
+    margin-top: 20px;
+    padding: 14px;
+
+    border-radius: 10px;
+
+    background: #fffbeb;
+
+    border: 1px solid #fde68a;
+}
+
+.calculation-notice i {
+    margin-top: 2px;
+
+    color: #d97706;
+}
+
+.calculation-notice p {
+    margin: 0;
+
+    color: #92400e;
+
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   SAVE CALCULATION
+========================================= */
+
+.save-calculation-btn {
+    width: 100%;
+
+    margin-top: 20px;
+
+    padding: 13px 18px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #111827;
+    color: #ffffff;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.save-calculation-btn:hover {
+    background: #1f2937;
+}
+
+.save-calculation-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+
+/* =========================================
+   CLASSIFIED SUMMARY
+========================================= */
+
+.classified-summary {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 16px;
+
+    margin-bottom: 22px;
+}
+
+.classified-summary > div {
+    padding: 18px;
+
+    border-radius: 12px;
+
+    background: #f8fafc;
+
+    border: 1px solid #eef0f4;
+}
+
+.classified-summary span {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #6b7280;
+
+    font-size: 12px;
+}
+
+.classified-summary strong {
+    color: #111827;
+
+    font-size: 20px;
+}
+
+
+/* =========================================
+   CLASSIFIED TABLE
+========================================= */
+
+.classified-table-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+.classified-table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 600px;
+}
+
+.classified-table th,
+.classified-table td {
+    padding: 14px;
+
+    text-align: left;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.classified-table th {
+    color: #6b7280;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.classified-table td {
+    color: #374151;
+
+    font-size: 13px;
+}
+
+.classified-table tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* =========================================
+   STATUS
+========================================= */
+
+.classified-table td:nth-child(3) {
+    font-weight: 600;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1000px) {
+
+    .tax-calculator-container {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .tax-calculator-card,
+    .tax-result-card,
+    .classified-income-card {
+        padding: 20px;
+    }
+
+    .calculator-actions {
+        flex-direction: column;
+    }
+
+    .calculator-actions button {
+        width: 100%;
+    }
+
+    .classified-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .result-row,
+    .result-highlight {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 6px;
+    }
+
+}
+

@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Create your TaxFlow account."
+    >
+
+    <title>Create Account — TaxFlow</title>
+
+
+    <!-- Fonts -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- Icons -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+
+    <!-- CSS -->
+
+    <link
+        rel="stylesheet"
+        href="../css/global.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/auth.css"
+    >
+
+</head>
+
+
+<body class="auth-page">
+
+
+    <main class="auth-layout">
+
+
+        <!-- =====================================
+             SHOWCASE
+        ====================================== -->
+
+        <section class="auth-showcase">
+
+            <div class="auth-showcase-inner">
+
+
+                <!-- Logo -->
+
+                <a
+                    href="index.html"
+                    class="brand"
+                >
+
+                    <span class="brand-icon">
+
+                        <i class="fa-solid fa-chart-line"></i>
+
+                    </span>
+
+                    <span class="brand-name">
+                        TaxFlow
+                    </span>
+
+                </a>
+
+
+                <!-- Content -->
+
+                <div class="showcase-content">
+
+                    <span class="section-eyebrow">
+                        Start with TaxFlow
+                    </span>
+
+
+                    <h1>
+
+                        Build better financial
+                        <span>records from day one.</span>
+
+                    </h1>
+
+
+                    <p>
+
+                        Create your TaxFlow account and start
+                        organising your business transactions,
+                        classifications, reports and tax information.
+
+                    </p>
+
+
+                    <div class="showcase-points">
+
+
+                        <div class="showcase-point">
+
+                            <span>
+                                <i class="fa-solid fa-check"></i>
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Organise transactions
+                                </strong>
+
+                                <p>
+                                    Keep your business activity
+                                    in one organised place.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="showcase-point">
+
+                            <span>
+                                <i class="fa-solid fa-check"></i>
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Track your tax position
+                                </strong>
+
+                                <p>
+                                    Get a clearer picture of your
+                                    financial position.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="showcase-point">
+
+                            <span>
+                                <i class="fa-solid fa-check"></i>
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Built for Nigerian businesses
+                                </strong>
+
+                                <p>
+                                    A simple financial workspace
+                                    designed for local businesses.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+                <div class="showcase-footer">
+
+                    © 2026 TaxFlow
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             SIGNUP PANEL
+        ====================================== -->
+
+        <section class="auth-panel">
+
+            <div class="auth-card">
+
+
+                <!-- Mobile Logo -->
+
+                <a
+                    href="index.html"
+                    class="brand auth-mobile-brand"
+                >
+
+                    <span class="brand-icon">
+
+                        <i class="fa-solid fa-chart-line"></i>
+
+                    </span>
+
+                    <span class="brand-name">
+                        TaxFlow
+                    </span>
+
+                </a>
+
+
+                <!-- Heading -->
+
+                <div class="auth-heading">
+
+                    <h2>
+                        Create your account
+                    </h2>
+
+                    <p>
+                        Start managing your business finances with TaxFlow.
+                    </p>
+
+                </div>
+
+
+                <!-- Error -->
+
+                <div
+                    class="auth-message error-message"
+                    id="signupError"
+                    role="alert"
+                    aria-live="polite"
+                ></div>
+
+
+                <!-- Success -->
+
+                <div
+                    class="auth-message success-message"
+                    id="signupSuccess"
+                    role="status"
+                    aria-live="polite"
+                ></div>
+
+
+                <!-- Signup Form -->
+
+                <form
+                    id="signupForm"
+                    class="auth-form"
+                    novalidate
+                >
+
+
+                    <!-- Full Name -->
+
+                    <div class="form-group">
+
+                        <label for="fullName">
+                            Full name
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <i class="fa-regular fa-user"></i>
+
+                            <input
+                                type="text"
+                                id="fullName"
+                                name="fullName"
+                                placeholder="e.g. Mohammed Omar"
+                                autocomplete="name"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Email -->
+
+                    <div class="form-group">
+
+                        <label for="signupEmail">
+                            Email address
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <i class="fa-regular fa-envelope"></i>
+
+                            <input
+                                type="email"
+                                id="signupEmail"
+                                name="email"
+                                placeholder="you@example.com"
+                                autocomplete="email"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Password -->
+
+                    <div class="form-group">
+
+                        <label for="signupPassword">
+                            Password
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <i class="fa-solid fa-lock"></i>
+
+                            <input
+                                type="password"
+                                id="signupPassword"
+                                name="password"
+                                placeholder="Create a password"
+                                autocomplete="new-password"
+                                minlength="8"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                id="signupPasswordToggle"
+                                aria-label="Show password"
+                            >
+
+                                <i class="fa-regular fa-eye"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Confirm Password -->
+
+                    <div class="form-group">
+
+                        <label for="confirmPassword">
+                            Confirm password
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <i class="fa-solid fa-lock"></i>
+
+                            <input
+                                type="password"
+                                id="confirmPassword"
+                                name="confirmPassword"
+                                placeholder="Confirm your password"
+                                autocomplete="new-password"
+                                minlength="8"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                id="confirmPasswordToggle"
+                                aria-label="Show password"
+                            >
+
+                                <i class="fa-regular fa-eye"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Terms -->
+
+                    <label class="checkbox-label">
+
+                        <input
+                            type="checkbox"
+                            id="agreeTerms"
+                            required
+                        >
+
+                        <span class="custom-checkbox"></span>
+
+                        <span>
+                            I agree to the TaxFlow terms and privacy policy.
+                        </span>
+
+                    </label>
+
+
+                    <!-- Submit -->
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary auth-submit"
+                        id="signupButton"
+                    >
+
+                        <span id="signupButtonText">
+                            Create account
+                        </span>
+
+                        <span
+                            class="button-spinner"
+                            id="signupSpinner"
+                            aria-hidden="true"
+                        ></span>
+
+                    </button>
+
+
+                </form>
+
+
+                <!-- Divider -->
+
+                <div class="auth-divider">
+
+                    <span>
+                        or
+                    </span>
+
+                </div>
+
+
+                <!-- Login -->
+
+                <p class="auth-switch">
+
+                    Already have an account?
+
+                    <a href="login.html">
+                        Log in
+                    </a>
+
+                </p>
+
+
+                <!-- Back -->
+
+                <a
+                    href="index.html"
+                    class="back-home"
+                >
+
+                    <i class="fa-solid fa-arrow-left"></i>
+
+                    Back to home
+
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../js/auth.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Log in — TaxFlow</title>
+
+
+    <!-- Google Fonts -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- Font Awesome -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+
+    <!-- TaxFlow CSS -->
+
+    <link
+        rel="stylesheet"
+        href="../css/global.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/auth.css"
+    >
+
+</head>
+
+
+<body class="auth-page">
+
+
+    <main class="auth-layout">
+
+
+        <!-- =====================================
+             LEFT SIDE
+        ====================================== -->
+
+        <section class="auth-showcase">
+
+            <div class="auth-showcase-inner">
+
+
+                <!-- Logo -->
+
+                <a
+                    href="index.html"
+                    class="brand"
+                >
+
+                    <span class="brand-icon">
+
+                        <i class="fa-solid fa-chart-line"></i>
+
+                    </span>
+
+                    <span class="brand-name">
+                        TaxFlow
+                    </span>
+
+                </a>
+
+
+                <!-- Main content -->
+
+                <div class="showcase-content">
+
+                    <span class="section-eyebrow">
+                        Tax & financial management
+                    </span>
+
+
+                    <h1>
+
+                        Manage your business
+                        <span>with confidence.</span>
+
+                    </h1>
+
+
+                    <p>
+
+                        TaxFlow helps you organise your
+                        business finances, track transactions,
+                        understand your tax position and keep
+                        your records in one place.
+
+                    </p>
+
+
+                    <div class="showcase-points">
+
+
+                        <div class="showcase-point">
+
+                            <span>
+                                <i class="fa-solid fa-check"></i>
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Organise your finances
+                                </strong>
+
+                                <p>
+                                    Keep your business records
+                                    clear and organised.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="showcase-point">
+
+                            <span>
+                                <i class="fa-solid fa-check"></i>
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Track your tax
+                                </strong>
+
+                                <p>
+                                    Understand your income,
+                                    expenses and tax position.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="showcase-point">
+
+                            <span>
+                                <i class="fa-solid fa-check"></i>
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Built for Nigerian businesses
+                                </strong>
+
+                                <p>
+                                    Simple tools designed around
+                                    local business needs.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+                <div class="showcase-footer">
+
+                    © 2026 TaxFlow
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             LOGIN
+        ====================================== -->
+
+        <section class="auth-panel">
+
+            <div class="auth-card">
+
+
+                <!-- Mobile logo -->
+
+                <a
+                    href="index.html"
+                    class="brand auth-mobile-brand"
+                >
+
+                    <span class="brand-icon">
+
+                        <i class="fa-solid fa-chart-line"></i>
+
+                    </span>
+
+                    <span class="brand-name">
+                        TaxFlow
+                    </span>
+
+                </a>
+
+
+                <!-- Heading -->
+
+                <div class="auth-heading">
+
+                    <h2>
+                        Welcome back
+                    </h2>
+
+                    <p>
+                        Log in to continue to your TaxFlow account.
+                    </p>
+
+                </div>
+
+
+                <!-- Error message -->
+
+                <div
+                    id="loginError"
+                    class="auth-message error-message"
+                    role="alert"
+                    aria-live="polite"
+                ></div>
+
+
+                <!-- Login form -->
+
+                <form
+                    id="loginForm"
+                    class="auth-form"
+                >
+
+
+                    <!-- Email -->
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email address
+                        </label>
+
+
+                        <div class="input-wrapper">
+
+                            <i class="fa-regular fa-envelope"></i>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="you@example.com"
+                                autocomplete="email"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Password -->
+
+                    <div class="form-group">
+
+
+                        <div class="form-label-row">
+
+                            <label for="password">
+                                Password
+                            </label>
+
+                            <a
+                                href="#"
+                                id="forgotPassword"
+                            >
+                                Forgot password?
+                            </a>
+
+                        </div>
+
+
+                        <div class="input-wrapper">
+
+                            <i class="fa-solid fa-lock"></i>
+
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="Enter your password"
+                                autocomplete="current-password"
+                                required
+                            >
+
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                id="passwordToggle"
+                                aria-label="Show password"
+                            >
+
+                                <i class="fa-regular fa-eye"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Remember me -->
+
+                    <label class="checkbox-label">
+
+                        <input
+                            type="checkbox"
+                            id="rememberMe"
+                        >
+
+                        <span class="custom-checkbox"></span>
+
+                        <span>
+                            Remember me
+                        </span>
+
+                    </label>
+
+
+
+                    <!-- Login button -->
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary auth-submit"
+                        id="loginButton"
+                    >
+
+                        <span id="loginButtonText">
+                            Log in
+                        </span>
+
+                        <span
+                            class="button-spinner"
+                            id="loginSpinner"
+                        ></span>
+
+                    </button>
+
+
+                </form>
+
+
+
+                <!-- Divider -->
+
+                <div class="auth-divider">
+
+                    <span>
+                        or
+                    </span>
+
+                </div>
+
+
+
+                <!-- Signup -->
+
+                <p class="auth-switch">
+
+                    Don't have an account?
+
+                    <a href="signup.html">
+                        Create one
+                    </a>
+
+                </p>
+
+
+
+                <!-- Back -->
+
+                <a
+                    href="index.html"
+                    class="back-home"
+                >
+
+                    <i class="fa-solid fa-arrow-left"></i>
+
+                    Back to home
+
+                </a>
+
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- Supabase -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+    <!-- TaxFlow Authentication -->
+
+    <script src="../js/auth.js"></script>
+
+
+</body>
+
+</html>

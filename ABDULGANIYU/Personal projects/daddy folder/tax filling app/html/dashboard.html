@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="TaxFlow business financial dashboard."
+    >
+
+    <title>Dashboard — TaxFlow</title>
+
+
+    <!-- Fonts -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- Icons -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+
+    <!-- CSS -->
+
+    <link
+        rel="stylesheet"
+        href="../css/global.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/dashboard.css"
+    >
+
+</head>
+
+
+<body class="dashboard-page">
+
+
+    <!-- =====================================
+         MOBILE OVERLAY
+    ====================================== -->
+
+    <div
+        class="sidebar-overlay"
+        id="sidebarOverlay"
+    ></div>
+
+
+
+    <!-- =====================================
+         SIDEBAR
+    ====================================== -->
+
+    <aside
+        class="dashboard-sidebar"
+        id="dashboardSidebar"
+    >
+
+
+        <!-- Logo -->
+
+        <div class="sidebar-brand">
+
+            <a
+                href="dashboard.html"
+                class="brand"
+            >
+
+                <span class="brand-icon">
+                    <i class="fa-solid fa-chart-line"></i>
+                </span>
+
+                <span class="brand-name">
+                    TaxFlow
+                </span>
+
+            </a>
+
+
+            <button
+                type="button"
+                class="sidebar-close"
+                id="sidebarClose"
+                aria-label="Close navigation"
+            >
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+
+        <!-- User -->
+
+        <div class="sidebar-user">
+
+            <div
+                class="user-avatar"
+                id="sidebarAvatar"
+            >
+                U
+            </div>
+
+            <div class="sidebar-user-info">
+
+                <strong id="sidebarUserName">
+                    Loading...
+                </strong>
+
+                <span id="sidebarUserEmail">
+                    Loading...
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Navigation -->
+
+        <nav class="sidebar-nav">
+
+
+            <p class="nav-label">
+                Overview
+            </p>
+
+
+            <a
+                href="dashboard.html"
+                class="sidebar-link active"
+            >
+
+                <i class="fa-solid fa-grid-2"></i>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+
+            <p class="nav-label">
+                Finances
+            </p>
+
+
+            <a
+                href="transactions.html"
+                class="sidebar-link"
+            >
+
+                <i class="fa-solid fa-arrow-right-arrow-left"></i>
+
+                <span>
+                    Transactions
+                </span>
+
+            </a>
+
+
+            <a
+                href="pending-classifications.html"
+                class="sidebar-link"
+            >
+
+                <i class="fa-solid fa-tags"></i>
+
+                <span>
+                    Pending classifications
+                </span>
+
+                <span
+                    class="nav-badge"
+                    id="pendingBadge"
+                >
+                    0
+                </span>
+
+            </a>
+
+
+            <a
+                href="reports.html"
+                class="sidebar-link"
+            >
+
+                <i class="fa-solid fa-chart-column"></i>
+
+                <span>
+                    Reports
+                </span>
+
+            </a>
+
+
+
+            <p class="nav-label">
+                Tax
+            </p>
+
+
+            <a
+                href="tax-calculator.html"
+                class="sidebar-link"
+            >
+
+                <i class="fa-solid fa-calculator"></i>
+
+                <span>
+                    Tax calculator
+                </span>
+
+            </a>
+
+
+
+            <p class="nav-label">
+                AI
+            </p>
+
+
+            <a
+                href="taxflow-ai.html"
+                class="sidebar-link ai-link"
+            >
+
+                <span class="ai-icon">
+
+                    <i class="fa-solid fa-sparkles"></i>
+
+                </span>
+
+                <span>
+                    TaxFlow AI
+                </span>
+
+                <span class="pro-badge">
+                    PRO
+                </span>
+
+            </a>
+
+
+
+            <p class="nav-label">
+                Account
+            </p>
+
+
+            <a
+                href="settings.html"
+                class="sidebar-link"
+            >
+
+                <i class="fa-solid fa-gear"></i>
+
+                <span>
+                    Settings
+                </span>
+
+            </a>
+
+
+        </nav>
+
+
+
+        <!-- Sidebar bottom -->
+
+        <div class="sidebar-bottom">
+
+
+            <!-- AI upgrade -->
+
+            <a
+                href="pricing.html"
+                class="sidebar-upgrade"
+            >
+
+                <div class="upgrade-icon">
+
+                    <i class="fa-solid fa-sparkles"></i>
+
+                </div>
+
+                <div>
+
+                    <strong>
+                        Unlock TaxFlow AI
+                    </strong>
+
+                    <span>
+                        Explore Pro plans
+                    </span>
+
+                </div>
+
+                <i class="fa-solid fa-chevron-right"></i>
+
+            </a>
+
+
+
+            <!-- Logout -->
+
+            <button
+                type="button"
+                class="logout-button"
+                id="logoutButton"
+            >
+
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+
+                <span>
+                    Log out
+                </span>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =====================================
+         MAIN
+    ====================================== -->
+
+    <main class="dashboard-main">
+
+
+        <!-- Topbar -->
+
+        <header class="dashboard-topbar">
+
+
+            <button
+                type="button"
+                class="mobile-menu-button"
+                id="mobileMenuButton"
+                aria-label="Open navigation"
+            >
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+
+            <div class="topbar-heading">
+
+                <span>
+                    Overview
+                </span>
+
+                <h1>
+                    Dashboard
+                </h1>
+
+            </div>
+
+
+            <div class="topbar-actions">
+
+
+                <a
+                    href="taxflow-ai.html"
+                    class="topbar-ai"
+                >
+
+                    <i class="fa-solid fa-sparkles"></i>
+
+                    <span>
+                        Ask TaxFlow AI
+                    </span>
+
+                </a>
+
+
+                <button
+                    type="button"
+                    class="notification-button"
+                    aria-label="Notifications"
+                >
+
+                    <i class="fa-regular fa-bell"></i>
+
+                    <span class="notification-dot"></span>
+
+                </button>
+
+
+                <div class="topbar-avatar">
+                    <span id="topbarAvatar">
+                        U
+                    </span>
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- Content -->
+
+        <div class="dashboard-content">
+
+
+            <!-- Welcome -->
+
+            <section class="welcome-section">
+
+                <div>
+
+                    <p class="welcome-label">
+                        Welcome back
+                    </p>
+
+                    <h2 id="welcomeName">
+                        Loading...
+                    </h2>
+
+                    <p>
+                        Here's what's happening with your business finances.
+                    </p>
+
+                </div>
+
+
+                <a
+                    href="transactions.html"
+                    class="btn btn-primary"
+                >
+
+                    <i class="fa-solid fa-plus"></i>
+
+                    Add transaction
+
+                </a>
+
+            </section>
+
+
+
+            <!-- =================================
+                 STATS
+            ================================== -->
+
+            <section class="stats-grid">
+
+
+                <article class="dashboard-stat-card">
+
+                    <div class="stat-card-header">
+
+                        <span>
+                            Total income
+                        </span>
+
+                        <div class="stat-icon income">
+                            <i class="fa-solid fa-arrow-trend-up"></i>
+                        </div>
+
+                    </div>
+
+                    <strong
+                        class="stat-value"
+                        id="totalIncome"
+                    >
+                        ₦0.00
+                    </strong>
+
+                    <div class="stat-footer">
+
+                        <span
+                            class="stat-change positive"
+                            id="incomeChange"
+                        >
+                            —
+                        </span>
+
+                        <span>
+                            this period
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+
+                <article class="dashboard-stat-card">
+
+                    <div class="stat-card-header">
+
+                        <span>
+                            Total expenses
+                        </span>
+
+                        <div class="stat-icon expense">
+                            <i class="fa-solid fa-arrow-trend-down"></i>
+                        </div>
+
+                    </div>
+
+                    <strong
+                        class="stat-value"
+                        id="totalExpenses"
+                    >
+                        ₦0.00
+                    </strong>
+
+                    <div class="stat-footer">
+
+                        <span
+                            class="stat-change"
+                            id="expenseChange"
+                        >
+                            —
+                        </span>
+
+                        <span>
+                            this period
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+
+                <article class="dashboard-stat-card">
+
+                    <div class="stat-card-header">
+
+                        <span>
+                            Estimated tax due
+                        </span>
+
+                        <div class="stat-icon tax">
+                            <i class="fa-solid fa-landmark"></i>
+                        </div>
+
+                    </div>
+
+                    <strong
+                        class="stat-value"
+                        id="taxDue"
+                    >
+                        ₦0.00
+                    </strong>
+
+                    <div class="stat-footer">
+
+                        <span>
+                            Current estimate
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+
+                <article class="dashboard-stat-card">
+
+                    <div class="stat-card-header">
+
+                        <span>
+                            Pending
+                        </span>
+
+                        <div class="stat-icon pending">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+
+                    </div>
+
+                    <strong
+                        class="stat-value"
+                        id="pendingCount"
+                    >
+                        0
+                    </strong>
+
+                    <div class="stat-footer">
+
+                        <a
+                            href="pending-classifications.html"
+                            class="stat-link"
+                        >
+                            Review classifications
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+            </section>
+
+
+
+            <!-- =================================
+                 MAIN GRID
+            ================================== -->
+
+            <section class="dashboard-grid">
+
+
+                <!-- Chart -->
+
+                <article class="dashboard-panel chart-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span class="panel-kicker">
+                                Financial overview
+                            </span>
+
+                            <h3>
+                                Income & expenses
+                            </h3>
+
+                        </div>
+
+
+                        <select
+                            id="chartPeriod"
+                            class="period-select"
+                        >
+
+                            <option value="6">
+                                Last 6 months
+                            </option>
+
+                            <option value="12">
+                                Last 12 months
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div
+                        class="dashboard-chart"
+                        id="incomeExpenseChart"
+                    >
+
+                        <div class="chart-empty">
+
+                            <i class="fa-solid fa-chart-simple"></i>
+
+                            <span>
+                                Your financial activity will appear here.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- Tax summary -->
+
+                <article class="dashboard-panel tax-summary-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span class="panel-kicker">
+                                Tax overview
+                            </span>
+
+                            <h3>
+                                Tax position
+                            </h3>
+
+                        </div>
+
+                        <a
+                            href="tax-calculator.html"
+                            class="panel-action"
+                        >
+                            View
+                        </a>
+
+                    </div>
+
+
+                    <div class="tax-summary-main">
+
+                        <span>
+                            Estimated tax
+                        </span>
+
+                        <strong id="taxSummaryAmount">
+                            ₦0.00
+                        </strong>
+
+                    </div>
+
+
+                    <div class="tax-progress">
+
+                        <div class="tax-progress-label">
+
+                            <span>
+                                Taxable income
+                            </span>
+
+                            <strong id="taxableIncome">
+                                ₦0.00
+                            </strong>
+
+                        </div>
+
+                        <div class="progress-track">
+
+                            <span
+                                id="taxProgress"
+                                style="width:0%"
+                            ></span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="tax-summary-note">
+
+                        <i class="fa-solid fa-circle-info"></i>
+
+                        <span>
+                            Your tax figures are estimates and should be reviewed before filing.
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+
+            </section>
+
+
+
+            <!-- =================================
+                 RECENT TRANSACTIONS
+            ================================== -->
+
+            <section class="dashboard-panel transactions-panel">
+
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <span class="panel-kicker">
+                            Activity
+                        </span>
+
+                        <h3>
+                            Recent transactions
+                        </h3>
+
+                    </div>
+
+
+                    <a
+                        href="transactions.html"
+                        class="panel-action"
+                    >
+                        View all
+                    </a>
+
+                </div>
+
+
+                <div
+                    class="transactions-list"
+                    id="recentTransactions"
+                >
+
+                    <div class="dashboard-empty">
+
+                        <div class="empty-icon">
+
+                            <i class="fa-solid fa-receipt"></i>
+
+                        </div>
+
+                        <strong>
+                            No transactions yet
+                        </strong>
+
+                        <span>
+                            Add your first transaction to get started.
+                        </span>
+
+                        <a
+                            href="transactions.html"
+                            class="btn btn-secondary"
+                        >
+                            Add transaction
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================
+                 AI CARD
+            ================================== -->
+
+            <section class="dashboard-ai-card">
+
+
+                <div class="ai-card-content">
+
+                    <span class="ai-card-icon">
+
+                        <i class="fa-solid fa-sparkles"></i>
+
+                    </span>
+
+
+                    <div>
+
+                        <span class="ai-card-label">
+                            TaxFlow AI
+                        </span>
+
+                        <h3>
+                            Your smarter financial assistant.
+                        </h3>
+
+                        <p>
+                            Get help understanding your transactions,
+                            tax position and financial reports.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="ai-card-actions">
+
+                    <a
+                        href="taxflow-ai.html"
+                        class="btn btn-white"
+                    >
+                        Try TaxFlow AI
+                    </a>
+
+                    <a
+                        href="pricing.html"
+                        class="ai-pricing-link"
+                    >
+                        See AI plans
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </section>
+
+
+        </div>
+
+    </main>
+
+
+
+    <!-- Supabase -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+    <!-- Dashboard JS -->
+
+    <script src="../js/dashboard.js"></script>
+
+</body>
+
+</html>

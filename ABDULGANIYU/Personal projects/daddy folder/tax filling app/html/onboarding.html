@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Set up your TaxFlow account</title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/global.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/onboarding.css"
+    >
+</head>
+
+<body class="onboarding-page">
+
+    <header class="onboarding-header">
+
+        <a
+            href="index.html"
+            class="brand"
+        >
+            <span class="brand-icon">
+                <i class="fa-solid fa-chart-line"></i>
+            </span>
+
+            <span class="brand-name">
+                TaxFlow
+            </span>
+        </a>
+
+        <span class="step-counter">
+            Step <strong id="currentStep">1</strong> of 6
+        </span>
+
+    </header>
+
+
+    <main class="onboarding-main">
+
+        <div class="onboarding-container">
+
+
+            <!-- Progress -->
+
+            <div class="progress-wrapper">
+
+                <div class="progress-track">
+
+                    <div
+                        class="progress-bar"
+                        id="progressBar"
+                    ></div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Questions -->
+
+            <form id="onboardingForm">
+
+
+                <!-- STEP 1 -->
+
+                <section
+                    class="question-step active"
+                    data-step="1"
+                >
+
+                    <span class="question-number">
+                        01
+                    </span>
+
+                    <h1>
+                        What type of business do you run?
+                    </h1>
+
+                    <p>
+                        This helps us personalise your TaxFlow experience.
+                    </p>
+
+
+                    <div class="option-grid">
+
+                        <label class="option-card">
+
+                            <input
+                                type="radio"
+                                name="businessType"
+                                value="sole_proprietor"
+                                required
+                            >
+
+                            <span class="option-content">
+
+                                <span class="option-icon">
+                                    <i class="fa-solid fa-user"></i>
+                                </span>
+
+                                <strong>
+                                    Sole Proprietor
+                                </strong>
+
+                                <small>
+                                    I run the business myself.
+                                </small>
+
+                            </span>
+
+                        </label>
+
+
+                        <label class="option-card">
+
+                            <input
+                                type="radio"
+                                name="businessType"
+                                value="partnership"
+                            >
+
+                            <span class="option-content">
+
+                                <span class="option-icon">
+                                    <i class="fa-solid fa-users"></i>
+                                </span>
+
+                                <strong>
+                                    Partnership
+                                </strong>
+
+                                <small>
+                                    The business has multiple owners.
+                                </small>
+
+                            </span>
+
+                        </label>
+
+
+                        <label class="option-card">
+
+                            <input
+                                type="radio"
+                                name="businessType"
+                                value="limited_company"
+                            >
+
+                            <span class="option-content">
+
+                                <span class="option-icon">
+                                    <i class="fa-solid fa-building"></i>
+                                </span>
+
+                                <strong>
+                                    Limited Company
+                                </strong>
+
+                                <small>
+                                    A registered limited company.
+                                </small>
+
+                            </span>
+
+                        </label>
+
+
+                        <label class="option-card">
+
+                            <input
+                                type="radio"
+                                name="businessType"
+                                value="other"
+                            >
+
+                            <span class="option-content">
+
+                                <span class="option-icon">
+                                    <i class="fa-solid fa-briefcase"></i>
+                                </span>
+
+                                <strong>
+                                    Other
+                                </strong>
+
+                                <small>
+                                    Another business structure.
+                                </small>
+
+                            </span>
+
+                        </label>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- STEP 2 -->
+
+                <section
+                    class="question-step"
+                    data-step="2"
+                >
+
+                    <span class="question-number">
+                        02
+                    </span>
+
+                    <h1>
+                        What does your business do?
+                    </h1>
+
+                    <p>
+                        Choose the category that best describes your business.
+                    </p>
+
+
+                    <div class="option-grid">
+
+                        <label class="option-card">
+
+                            <input
+                                type="radio"
+                                name="businessIndustry"
+                                value="retail"
+                            >
+
+                            <span class="option-content">
+
+                                <span class="option-icon">
+                                    <i class="fa-solid fa-store"></i>
+                                </span>
+
+                                <strong>
+                                    Retail
+                                    
+                                    <small>
+                                </strong>
+                                    Selling products to customers.
+                                </small>
+
+                            </span>
+
+                        </label>
+
+
+                        <label class="option-card">
+
+                            <input
+                                type="radio"
+                                name="businessIndustry"
+                                value="services"
+                            >
+
+                            <span class="option-content">
+
+                                <span class="option-icon">
+                                    <i class="fa-solid fa-handshake"></i>
+                                </span>
+
+                                <strong>
+                                    Services
+                                </strong>
+
+                                <small>
+                                    Providing services to customers.
+                                </small>
+
+                            </span>
+
+                        </label>
+
+
+                        <label class="option-card">
+
+                            <input
+                                type="radio"
+                                name="businessIndustry"
+                                value="manufacturing"
+                            >
+
+                            <span class="option-content">
+
+                                <span class="option-icon">
+                                    <i class="fa-solid fa-industry"></i>
+                                </span>
+
+                                <strong>
+                                    Manufacturing
+                                </strong>
+
+                                <small>
+                                    Making or producing goods.
+                                </small>
+
+                            </span>
+
+                        </label>
+
+
+                        <label class="option-card">
+
+                            <input
+                                type="radio"
+                                name="businessIndustry"
+                                value="professional"
+                            >
+
+                            <span class="option-content">
+
+                                <span class="option-icon">
+                                    <i class="fa-solid fa-user-tie"></i>
+                                </span>
+
+                                <strong>
+                                    Professional services
+                                </strong>
+
+                                <small>
+                                    Consulting or professional work.
+                                </small>
+
+                            </span>
+
+                        </label>
+
+
+                        <label class="option-card">
+
+                            <input
+                                type="radio"
+                                name="businessIndustry"
+                                value="other"
+                            >
+
+                            <span class="option-content">
+
+                                <span class="option-icon">
+                                    <i class="fa-solid fa-ellipsis"></i>
+                                </span>
+
+                                <strong>
+                                    Other
+                                </strong>
+
+                                <small>
+                                    Something else.
+                                </small>
+
+                            </span>
+
+                        </label>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- STEP 3 -->
+
+                <section
+                    class="question-step"
+                    data-step="3"
+                >
+
+                    <span class="question-number">
+                        03
+                    </span>
+
+                    <h1>
+                        How do you currently track your finances?
+                    </h1>
+
+                    <p>
+                        Don't worry if you don't have a system yet.
+                    </p>
+
+
+                    <div class="option-grid">
+
+                        <label class="option-card">
+
+                            <input
+                                type="radio"
+                                name="financeTracking"
+                                value="spreadsheet"
+                            >
+
+                            <span class="option-content">
+
+                                <span class="option-icon">
+                                    <i class="fa-solid fa-table"></i>
+                                </span>
+
+                                <strong>
+                                    Spreadsheet
+                                </strong>
+
+                                <small>
+                                    Excel, Google Sheets or similar.
+                                </small>
+
+                            </span>
+
+                        </label>
+
+
+                        <label class="option-card">
+
+                            <input
+                                type="radio"
+                                name="financeTracking"
+                                value="notebook"
+                            >
+
+                            <span class="option-content">
+
+                                <span class="option-icon">
+                                    <i class="fa-solid fa-book"></i>
+                                </span>
+
+                                <strong>
+                                    Notebook
+                                </strong>
+
+                                <small>
+                                    I record things manually.
+                                </small>
+
+                            </span>
+
+                        </label>
+
+
+                        <label class="option-card">
+
+                            <input
+                                type="radio"
+                                name="financeTracking"
+                                value="accounting_software"
+                            >
+
+                            <span class="option-content">
+
+                                <span class="option-icon">
+                                    <i class="fa-solid fa-calculator"></i>
+                                </span>
+
+                                <strong>
+                                    Accounting software
+                                </strong>
+
+                                <small>
+                                    I already use accounting software.
+                                </small>
+
+                            </span>
+
+                        </label>
+
+
+                        <label class="option-card">
+
+                            <input
+                                type="radio"
+                                name="financeTracking"
+                                value="none"
+                            >
+
+                            <span class="option-content">
+
+                                <span class="option-icon">
+                                    <i class="fa-solid fa-circle-question"></i>
+                                </span>
+
+                                <strong>
+                                    I don't track them yet
+                                </strong>
+
+                                <small>
+                                    I'm starting from scratch.
+                                </small>
+
+                            </span>
+
+                        </label>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- STEP 4 -->
+
+                <section
+                    class="question-step"
+                    data-step="4"
+                >
+
+                    <span class="question-number">
+                        04
+                    </span>
+
+                    <h1>
+                        What do you want TaxFlow to help with?
+                    </h1>
+
+                    <p>
+                        Select everything that matters to you.
+                    </p>
+
+
+                    <div class="option-grid">
+
+                        <label class="option-card">
+
+                            <input
+                                type="checkbox"
+                                name="goals"
+                                value="income_expenses"
+                            >
+
+                            <span class="option-content">
+
+                                <span class="option-icon">
+                                    <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                                </span>
+
+                                <strong>
+                                    Track income & expenses
+                                </strong>
+
+                            </span>
+
+                        </label>
+
+
+                        <label class="option-card">
+
+                            <input
+                                type="checkbox"
+                                name="goals"
+                                value="tax"
+                            >
+
+                            <span class="option-content">
+
+                                <span class="option-icon">
+                                    <i class="fa-solid fa-landmark"></i>
+                                </span>
+
+                                <strong>
+                                    Calculate taxes
+                                </strong>
+
+                            </span>
+
+                        </label>
+
+
+                        <label class="option-card">
+
+                            <input
+                                type="checkbox"
+                                name="goals"
+                                value="reports"
+                            >
+
+                            <span class="option-content">
+
+                                <span class="option-icon">
+                                    <i class="fa-solid fa-chart-column"></i>
+                                </span>
+
+                                <strong>
+                                    Generate reports
+                                </strong>
+
+                            </span>
+
+                        </label>
+
+
+                        <label class="option-card">
+
+                            <input
+                                type="checkbox"
+                                name="goals"
+                                value="invoices"
+                            >
+
+                            <span class="option-content">
+
+                                <span class="option-icon">
+                                    <i class="fa-solid fa-file-invoice"></i>
+                                </span>
+
+                                <strong>
+                                    Invoices
+                                </strong>
+
+                            </span>
+
+                        </label>
+
+
+                        <label class="option-card">
+
+                            <input
+                                type="checkbox"
+                                name="goals"
+                                value="ai"
+                            >
+
+                            <span class="option-content">
+
+                                <span class="option-icon">
+                                    <i class="fa-solid fa-sparkles"></i>
+                                </span>
+
+                                <strong>
+                                    TaxFlow AI
+                                </strong>
+
+                            </span>
+
+                        </label>
+
+
+                        <label class="option-card">
+
+                            <input
+                                type="checkbox"
+                                name="goals"
+                                value="everything"
+                            >
+
+                            <span class="option-content">
+
+                                <span class="option-icon">
+                                    <i class="fa-solid fa-layer-group"></i>
+                                </span>
+
+                                <strong>
+                                    Everything
+                                </strong>
+
+                            </span>
+
+                        </label>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- STEP 5 -->
+
+                <section
+                    class="question-step"
+                    data-step="5"
+                >
+
+                    <span class="question-number">
+                        05
+                    </span>
+
+                    <h1>
+                        How big is your business?
+                    </h1>
+
+                    <p>
+                        This helps us understand your business needs.
+                    </p>
+
+
+                    <div class="option-grid">
+
+                        <label class="option-card">
+
+                            <input
+                                type="radio"
+                                name="businessSize"
+                                value="just_me"
+                            >
+
+                            <span class="option-content">
+
+                                <span class="option-icon">
+                                    <i class="fa-solid fa-user"></i>
+                                </span>
+
+                                <strong>
+                                    Just me
+                                </strong>
+
+                            </span>
+
+                        </label>
+
+
+                        <label class="option-card">
+
+                            <input
+                                type="radio"
+                                name="businessSize"
+                                value="2_5"
+                            >
+
+                            <span class="option-content">
+
+                                <span class="option-icon">
+                                    <i class="fa-solid fa-users"></i>
+                                </span>
+
+                                <strong>
+                                    2–5 people
+                                </strong>
+
+                            </span>
+
+                        </label>
+
+
+                        <label class="option-card">
+
+                            <input
+                                type="radio"
+                                name="businessSize"
+                                value="6_20"
+                            >
+
+                            <span class="option-content">
+
+                                <span class="option-icon">
+                                    <i class="fa-solid fa-users"></i>
+                                </span>
+
+                                <strong>
+                                    6–20 people
+                                </strong>
+
+                            </span>
+
+                        </label>
+
+
+                        <label class="option-card">
+
+                            <input
+                                type="radio"
+                                name="businessSize"
+                                value="21_plus"
+                            >
+
+                            <span class="option-content">
+
+                                <span class="option-icon">
+                                    <i class="fa-solid fa-building"></i>
+                                </span>
+
+                                <strong>
+                                    21+ people
+                                </strong>
+
+                            </span>
+
+                        </label>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- STEP 6 -->
+
+                <section
+                    class="question-step"
+                    data-step="6"
+                >
+
+                    <span class="question-number">
+                        06
+                    </span>
+
+                    <h1>
+                        What tax information do you already have?
+                    </h1>
+
+                    <p>
+                        Select everything you currently have.
+                    </p>
+
+
+                    <div class="option-grid">
+
+                        <label class="option-card">
+
+                            <input
+                                type="checkbox"
+                                name="taxInfo"
+                                value="tin"
+                            >
+
+                            <span class="option-content">
+
+                                <span class="option-icon">
+                                    <i class="fa-solid fa-id-card"></i>
+                                </span>
+
+                                <strong>
+                                    TIN
+                                </strong>
+
+                            </span>
+
+                        </label>
+
+
+                        <label class="option-card">
+
+                            <input
+                                type="checkbox"
+                                name="taxInfo"
+                                value="vat"
+                            >
+
+                            <span class="option-content">
+
+                                <span class="option-icon">
+                                    <i class="fa-solid fa-receipt"></i>
+                                </span>
+
+                                <strong>
+                                    VAT registration
+                                </strong>
+
+                            </span>
+
+                        </label>
+
+
+                        <label class="option-card">
+
+                            <input
+                                type="checkbox"
+                                name="taxInfo"
+                                value="business_registration"
+                            >
+
+                            <span class="option-content">
+
+                                <span class="option-icon">
+                                    <i class="fa-solid fa-file-circle-check"></i>
+                                </span>
+
+                                <strong>
+                                    Business registration
+                                </strong>
+
+                            </span>
+
+                        </label>
+
+
+                        <label class="option-card">
+
+                            <input
+                                type="checkbox"
+                                name="taxInfo"
+                                value="none"
+                            >
+
+                            <span class="option-content">
+
+                                <span class="option-icon">
+                                    <i class="fa-solid fa-circle-minus"></i>
+                                </span>
+
+                                <strong>
+                                    None yet
+                                </strong>
+
+                            </span>
+
+                        </label>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- Navigation -->
+
+                <div class="onboarding-actions">
+
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        id="backButton"
+                    >
+                        Back
+                    </button>
+
+                    <button
+                        type="button"
+                        class="btn btn-primary"
+                        id="nextButton"
+                    >
+                        Continue
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </main>
+
+
+    <!-- Font Awesome -->
+
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js"
+    ></script>
+
+
+    <!-- Supabase -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+    ></script>
+
+
+    <!-- Onboarding -->
+
+    <script
+        src="../js/onboarding.js"
+    ></script>
+
+</body>
+
+</html>

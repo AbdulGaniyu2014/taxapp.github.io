@@ -1,0 +1,690 @@
+/* =========================================
+   TAXFLOW — ONBOARDING
+   ========================================= */
+
+:root {
+    --tf-primary: #0f766e;
+    --tf-primary-dark: #115e59;
+    --tf-primary-light: #ecfdf5;
+
+    --tf-text: #172033;
+    --tf-muted: #667085;
+
+    --tf-border: #e4e7ec;
+    --tf-background: #f8fafc;
+    --tf-white: #ffffff;
+
+    --tf-radius: 14px;
+    --tf-shadow: 0 10px 35px rgba(16, 24, 40, 0.07);
+}
+
+
+/* =========================================
+   PAGE
+   ========================================= */
+
+.onboarding-page {
+    min-height: 100vh;
+    margin: 0;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(15, 118, 110, 0.07),
+            transparent 32%
+        ),
+        var(--tf-background);
+
+    color: var(--tf-text);
+
+    font-family:
+        "DM Sans",
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+}
+
+
+/* =========================================
+   HEADER
+   ========================================= */
+
+.onboarding-header {
+    width: 100%;
+    min-height: 76px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 6%;
+
+    background: rgba(255, 255, 255, 0.92);
+
+    border-bottom: 1px solid var(--tf-border);
+
+    box-sizing: border-box;
+}
+
+
+/* Brand */
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 11px;
+
+    color: var(--tf-text);
+
+    text-decoration: none;
+}
+
+
+.brand-icon {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: var(--tf-primary);
+    color: white;
+
+    font-size: 16px;
+}
+
+
+.brand-name {
+    font-family: "Manrope", sans-serif;
+
+    font-size: 21px;
+    font-weight: 800;
+
+    letter-spacing: -0.5px;
+}
+
+
+/* Step counter */
+
+.step-counter {
+    color: var(--tf-muted);
+
+    font-size: 14px;
+    font-weight: 500;
+}
+
+
+.step-counter strong {
+    color: var(--tf-text);
+}
+
+
+/* =========================================
+   MAIN
+   ========================================= */
+
+.onboarding-main {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+
+    padding: 55px 20px 70px;
+
+    box-sizing: border-box;
+}
+
+
+.onboarding-container {
+    width: 100%;
+    max-width: 820px;
+}
+
+
+/* =========================================
+   PROGRESS
+   ========================================= */
+
+.progress-wrapper {
+    width: 100%;
+
+    margin-bottom: 42px;
+}
+
+
+.progress-track {
+    width: 100%;
+    height: 5px;
+
+    overflow: hidden;
+
+    background: #e8edf2;
+
+    border-radius: 999px;
+}
+
+
+.progress-bar {
+    width: 16.66%;
+    height: 100%;
+
+    background: var(--tf-primary);
+
+    border-radius: inherit;
+
+    transition:
+        width 0.35s ease;
+}
+
+
+/* =========================================
+   FORM
+   ========================================= */
+
+#onboardingForm {
+    width: 100%;
+}
+
+
+/* =========================================
+   QUESTION STEP
+   ========================================= */
+
+.question-step {
+    display: none;
+
+    animation:
+        questionIn 0.3s ease;
+}
+
+
+.question-step.active {
+    display: block;
+}
+
+
+@keyframes questionIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================
+   QUESTION TEXT
+   ========================================= */
+
+.question-number {
+    display: inline-block;
+
+    margin-bottom: 12px;
+
+    color: var(--tf-primary);
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+}
+
+
+.question-step h1 {
+    margin: 0;
+
+    max-width: 700px;
+
+    color: var(--tf-text);
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: clamp(
+        28px,
+        4vw,
+        42px
+    );
+
+    line-height: 1.15;
+
+    letter-spacing: -1.4px;
+}
+
+
+.question-step > p {
+    max-width: 650px;
+
+    margin: 14px 0 32px;
+
+    color: var(--tf-muted);
+
+    font-size: 16px;
+    line-height: 1.65;
+}
+
+
+/* =========================================
+   OPTIONS
+   ========================================= */
+
+.option-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(0, 1fr)
+        );
+
+    gap: 15px;
+}
+
+
+.option-card {
+    position: relative;
+
+    display: block;
+
+    cursor: pointer;
+}
+
+
+.option-card input {
+    position: absolute;
+
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+.option-content {
+    min-height: 112px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 21px;
+
+    background: var(--tf-white);
+
+    border: 1.5px solid var(--tf-border);
+
+    border-radius: var(--tf-radius);
+
+    box-sizing: border-box;
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.option-card:hover .option-content {
+    border-color: #b8d9d5;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 25px
+        rgba(16, 24, 40, 0.06);
+}
+
+
+.option-card input:checked
++ .option-content {
+
+    border-color: var(--tf-primary);
+
+    background: var(--tf-primary-light);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(15, 118, 110, 0.08);
+}
+
+
+/* =========================================
+   OPTION ICON
+   ========================================= */
+
+.option-icon {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 13px;
+
+    border-radius: 10px;
+
+    background: #f2f4f7;
+
+    color: #475467;
+
+    font-size: 15px;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+
+.option-card input:checked
++ .option-content
+.option-icon {
+
+    background: var(--tf-primary);
+
+    color: white;
+}
+
+
+/* =========================================
+   OPTION TEXT
+   ========================================= */
+
+.option-content strong {
+    color: var(--tf-text);
+
+    font-size: 15px;
+    font-weight: 700;
+
+    line-height: 1.4;
+}
+
+
+.option-content small {
+    margin-top: 4px;
+
+    color: var(--tf-muted);
+
+    font-size: 13px;
+
+    line-height: 1.45;
+}
+
+
+/* =========================================
+   ACTIONS
+   ========================================= */
+
+.onboarding-actions {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 38px;
+
+    padding-top: 24px;
+
+    border-top: 1px solid var(--tf-border);
+}
+
+
+/* =========================================
+   BUTTONS
+   ========================================= */
+
+.btn {
+    min-height: 48px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    padding: 0 22px;
+
+    border: 0;
+
+    border-radius: 10px;
+
+    font-family: inherit;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.btn-primary {
+    background: var(--tf-primary);
+
+    color: white;
+
+    box-shadow:
+        0 5px 15px
+        rgba(15, 118, 110, 0.18);
+}
+
+
+.btn-primary:hover {
+    background: var(--tf-primary-dark);
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 8px 20px
+        rgba(15, 118, 110, 0.23);
+}
+
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+
+.btn-secondary {
+    background: white;
+
+    color: #344054;
+
+    border: 1px solid var(--tf-border);
+}
+
+
+.btn-secondary:hover {
+    background: #f9fafb;
+
+    border-color: #d0d5dd;
+}
+
+
+.btn:disabled {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* =========================================
+   FOCUS
+   ========================================= */
+
+.option-card:focus-within
+.option-content {
+
+    outline: 3px solid
+        rgba(15, 118, 110, 0.16);
+
+    outline-offset: 2px;
+}
+
+
+.btn:focus-visible {
+
+    outline: 3px solid
+        rgba(15, 118, 110, 0.2);
+
+    outline-offset: 3px;
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 700px) {
+
+    .onboarding-header {
+        min-height: 68px;
+
+        padding: 0 20px;
+    }
+
+
+    .brand-name {
+        font-size: 19px;
+    }
+
+
+    .brand-icon {
+        width: 35px;
+        height: 35px;
+    }
+
+
+    .step-counter {
+        font-size: 12px;
+    }
+
+
+    .onboarding-main {
+        padding:
+            35px
+            16px
+            50px;
+    }
+
+
+    .progress-wrapper {
+        margin-bottom: 32px;
+    }
+
+
+    .option-grid {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+    }
+
+
+    .option-content {
+        min-height: 95px;
+
+        padding: 17px;
+    }
+
+
+    .option-icon {
+        width: 36px;
+        height: 36px;
+
+        margin-bottom: 10px;
+    }
+
+
+    .question-step h1 {
+        font-size: 29px;
+
+        letter-spacing: -0.8px;
+    }
+
+
+    .question-step > p {
+        margin-bottom: 25px;
+
+        font-size: 14px;
+    }
+
+
+    .onboarding-actions {
+        margin-top: 30px;
+
+        padding-top: 20px;
+    }
+
+
+    .btn {
+        min-height: 46px;
+
+        padding: 0 18px;
+    }
+
+}
+
+
+/* =========================================
+   SMALL PHONES
+   ========================================= */
+
+@media (max-width: 420px) {
+
+    .onboarding-header {
+        padding:
+            0
+            15px;
+    }
+
+
+    .brand-name {
+        font-size: 17px;
+    }
+
+
+    .step-counter {
+        font-size: 11px;
+    }
+
+
+    .onboarding-main {
+        padding:
+            28px
+            13px
+            40px;
+    }
+
+
+    .question-step h1 {
+        font-size: 26px;
+    }
+
+
+    .onboarding-actions {
+        gap: 10px;
+    }
+
+
+    .btn {
+        padding:
+            0
+            15px;
+    }
+
+}

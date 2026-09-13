@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Tax Calculator | Tax Filing App</title>
+
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <!-- Global CSS -->
+    <link
+        rel="stylesheet"
+        href="../css/global.css"
+    >
+
+    <!-- Dashboard CSS -->
+    <link
+        rel="stylesheet"
+        href="../css/dashboard.css"
+    >
+
+    <!-- Tax Calculator CSS -->
+    <link
+        rel="stylesheet"
+        href="../css/tax-calculator.css"
+    >
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+
+    <!-- =========================================
+         SIDEBAR
+    ========================================== -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <i class="fa-solid fa-file-invoice-dollar"></i>
+
+            <h2>Tax Filing</h2>
+
+        </div>
+
+
+        <nav>
+
+            <!-- Dashboard -->
+
+            <a href="dashboard.html">
+
+                <i class="fa-solid fa-house"></i>
+
+                <span>Dashboard</span>
+
+            </a>
+
+
+            <!-- Transactions -->
+
+            <a href="transactions.html">
+
+                <i class="fa-solid fa-money-bill-transfer"></i>
+
+                <span>Transactions</span>
+
+            </a>
+
+
+            <!-- Tax Calculator -->
+
+            <a
+                href="tax-calculator.html"
+                class="active"
+            >
+
+                <i class="fa-solid fa-calculator"></i>
+
+                <span>Tax Calculator</span>
+
+            </a>
+
+
+            <!-- Pending Classifications -->
+
+            <a href="pending-classifications.html">
+
+                <i class="fa-solid fa-folder-open"></i>
+
+                <span>Pending Classifications</span>
+
+            </a>
+
+
+            <!-- Reports -->
+
+            <a href="reports.html">
+
+                <i class="fa-solid fa-chart-line"></i>
+
+                <span>Reports</span>
+
+            </a>
+
+
+            <!-- Settings -->
+
+            <a href="settings.html">
+
+                <i class="fa-solid fa-gear"></i>
+
+                <span>Settings</span>
+
+            </a>
+
+
+            <!-- Help & Support -->
+
+            <a href="help-support.html">
+
+                <i class="fa-solid fa-circle-question"></i>
+
+                <span>Help & Support</span>
+
+            </a>
+
+
+            <!-- Logout -->
+
+            <a
+                href="#"
+                id="logoutBtn"
+            >
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                <span>Logout</span>
+
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- =========================================
+         MAIN CONTENT
+    ========================================== -->
+
+    <main class="main-content">
+
+
+        <!-- =====================================
+             TOP BAR
+        ====================================== -->
+
+        <header class="topbar">
+
+            <div>
+
+                <h1>Tax Calculator</h1>
+
+                <p>
+                    Calculate and review your estimated tax.
+                </p>
+
+            </div>
+
+        </header>
+
+
+        <!-- =====================================
+             CALCULATOR CONTENT
+        ====================================== -->
+
+        <section class="tax-calculator-container">
+
+
+            <!-- =================================
+                 CALCULATOR FORM
+            ================================== -->
+
+            <div class="tax-calculator-card">
+
+                <div class="section-heading">
+
+                    <div class="section-icon">
+
+                        <i class="fa-solid fa-calculator"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h2>Tax Computation</h2>
+
+                        <p>
+                            Enter the information required
+                            for your tax computation.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <form id="taxCalculatorForm">
+
+
+                    <!-- Tax Year -->
+
+                    <div class="form-group">
+
+                        <label for="taxYear">
+
+                            Tax Year
+
+                        </label>
+
+                        <select
+                            id="taxYear"
+                            required
+                        >
+
+                            <option value="">
+                                Select tax year
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Monthly Income -->
+
+                    <div class="form-group">
+
+                        <label for="monthlyIncome">
+
+                            Monthly Income
+
+                        </label>
+
+                        <div class="input-with-prefix">
+
+                            <span>₦</span>
+
+                            <input
+                                type="number"
+                                id="monthlyIncome"
+                                min="0"
+                                step="0.01"
+                                placeholder="0.00"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Other Income -->
+
+                    <div class="form-group">
+
+                        <label for="otherIncome">
+
+                            Other Monthly Income
+
+                        </label>
+
+                        <div class="input-with-prefix">
+
+                            <span>₦</span>
+
+                            <input
+                                type="number"
+                                id="otherIncome"
+                                min="0"
+                                step="0.01"
+                                placeholder="0.00"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Deductions -->
+
+                    <div class="form-group">
+
+                        <label for="deductions">
+
+                            Allowable Deductions
+
+                        </label>
+
+                        <div class="input-with-prefix">
+
+                            <span>₦</span>
+
+                            <input
+                                type="number"
+                                id="deductions"
+                                min="0"
+                                step="0.01"
+                                placeholder="0.00"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Calculation Period -->
+
+                    <div class="form-group">
+
+                        <label for="calculationPeriod">
+
+                            Calculation Period
+
+                        </label>
+
+                        <select
+                            id="calculationPeriod"
+                            required
+                        >
+
+                            <option value="monthly">
+                                Monthly
+                            </option>
+
+                            <option value="annual">
+                                Annual
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Buttons -->
+
+                    <div class="calculator-actions">
+
+                        <button
+                            type="button"
+                            class="secondary-btn"
+                            id="clearCalculator"
+                        >
+
+                            <i class="fa-solid fa-rotate-left"></i>
+
+                            Clear
+
+                        </button>
+
+
+                        <button
+                            type="submit"
+                            class="primary-btn"
+                            id="calculateTaxBtn"
+                        >
+
+                            <i class="fa-solid fa-calculator"></i>
+
+                            Calculate Tax
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+
+            <!-- =================================
+                 RESULT CARD
+            ================================== -->
+
+            <div
+                class="tax-result-card"
+                id="taxResultCard"
+            >
+
+                <div class="section-heading">
+
+                    <div class="section-icon">
+
+                        <i class="fa-solid fa-chart-pie"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h2>Calculation Result</h2>
+
+                        <p>
+                            Your tax calculation will appear here.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Initial State -->
+
+                <div
+                    class="result-empty"
+                    id="resultEmpty"
+                >
+
+                    <i class="fa-solid fa-file-invoice"></i>
+
+                    <h3>No Calculation Yet</h3>
+
+                    <p>
+                        Enter your income information and
+                        select Calculate Tax.
+                    </p>
+
+                </div>
+
+
+                <!-- Results -->
+
+                <div
+                    class="result-content"
+                    id="resultContent"
+                    hidden
+                >
+
+
+                    <!-- Total Income -->
+
+                    <div class="result-row">
+
+                        <span>
+                            Total Income
+                        </span>
+
+                        <strong id="resultTotalIncome">
+                            ₦0.00
+                        </strong>
+
+                    </div>
+
+
+                    <!-- Deductions -->
+
+                    <div class="result-row">
+
+                        <span>
+                            Allowable Deductions
+                        </span>
+
+                        <strong id="resultDeductions">
+                            ₦0.00
+                        </strong>
+
+                    </div>
+
+
+                    <!-- Taxable Income -->
+
+                    <div class="result-row">
+
+                        <span>
+                            Taxable Income
+                        </span>
+
+                        <strong id="resultTaxableIncome">
+                            ₦0.00
+                        </strong>
+
+                    </div>
+
+
+                    <div class="result-divider"></div>
+
+
+                    <!-- Estimated Tax -->
+
+                    <div class="result-highlight">
+
+                        <span>
+                            Estimated Tax
+                        </span>
+
+                        <strong id="resultTax">
+                            ₦0.00
+                        </strong>
+
+                    </div>
+
+
+                    <!-- Monthly Tax -->
+
+                    <div class="result-row">
+
+                        <span>
+                            Monthly Tax
+                        </span>
+
+                        <strong id="resultMonthlyTax">
+                            ₦0.00
+                        </strong>
+
+                    </div>
+
+
+                    <!-- Effective Rate -->
+
+                    <div class="result-row">
+
+                        <span>
+                            Effective Tax Rate
+                        </span>
+
+                        <strong id="resultTaxRate">
+                            0%
+                        </strong>
+
+                    </div>
+
+
+                    <!-- Notice -->
+
+                    <div class="calculation-notice">
+
+                        <i class="fa-solid fa-circle-info"></i>
+
+                        <p>
+                            This result is an estimate.
+                            Final computation will use the
+                            application's configured tax rules.
+                        </p>
+
+                    </div>
+
+
+                    <!-- Save Button -->
+
+                    <button
+                        type="button"
+                        class="save-calculation-btn"
+                        id="saveCalculationBtn"
+                    >
+
+                        <i class="fa-solid fa-floppy-disk"></i>
+
+                        Save Calculation
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             TRANSACTION INFORMATION
+        ====================================== -->
+
+        <section class="classified-income-card">
+
+            <div class="section-heading">
+
+                <div class="section-icon">
+
+                    <i class="fa-solid fa-money-bill-transfer"></i>
+
+                </div>
+
+                <div>
+
+                    <h2>Classified Transactions</h2>
+
+                    <p>
+                        Income transactions available
+                        for your tax computation.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="classified-summary"
+                id="classifiedSummary"
+            >
+
+                <div>
+
+                    <span>
+                        Classified Income
+                    </span>
+
+                    <strong id="classifiedIncome">
+                        ₦0.00
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Transactions
+                    </span>
+
+                    <strong id="classifiedTransactionCount">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="classified-table-wrapper">
+
+                <table class="classified-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Transaction
+                            </th>
+
+                            <th>
+                                Amount
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                            <th>
+                                Date
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="classifiedTransactions">
+
+                        <tr>
+
+                            <td
+                                colspan="4"
+                                style="text-align:center;padding:35px;"
+                            >
+
+                                Loading classified transactions...
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+</div>
+
+
+<!-- =========================================
+     SUPABASE
+========================================== -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+<!-- Supabase Configuration -->
+
+<script src="../js/supabase.js"></script>
+
+
+<!-- Authentication -->
+
+<script src="../js/auth.js"></script>
+
+
+<!-- Tax Calculator -->
+
+<script src="../js/tax-calculator.js"></script>
+
+
+</body>
+
+</html>

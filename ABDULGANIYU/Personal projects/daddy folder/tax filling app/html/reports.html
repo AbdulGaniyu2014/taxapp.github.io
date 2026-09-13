@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Reports | TaxFlow</title>
+
+
+    <!-- Poppins -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- Font Awesome -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+
+    <!-- CSS -->
+
+    <link
+        rel="stylesheet"
+        href="../css/global.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/reports.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<div class="dashboard">
+
+
+    <!-- =========================================
+         SIDEBAR
+    ========================================== -->
+
+    <aside class="sidebar">
+
+
+        <div class="logo">
+
+            <i class="fa-solid fa-file-invoice-dollar"></i>
+
+            <h2>
+                TaxFlow
+            </h2>
+
+        </div>
+
+
+        <nav>
+
+
+            <a href="dashboard.html">
+
+                <i class="fa-solid fa-house"></i>
+
+                Dashboard
+
+            </a>
+
+
+            <a href="transactions.html">
+
+                <i class="fa-solid fa-money-bill-transfer"></i>
+
+                Transactions
+
+            </a>
+
+
+            <a href="tax-calculator.html">
+
+                <i class="fa-solid fa-calculator"></i>
+
+                Tax Calculator
+
+            </a>
+
+
+            <a href="pending-classifications.html">
+
+                <i class="fa-solid fa-list-check"></i>
+
+                Pending Classifications
+
+            </a>
+
+
+            <a
+                href="reports.html"
+                class="active"
+            >
+
+                <i class="fa-solid fa-chart-column"></i>
+
+                Reports
+
+            </a>
+
+
+            <a href="settings.html">
+
+                <i class="fa-solid fa-gear"></i>
+
+                Settings
+
+            </a>
+
+
+            <a href="help-support.html">
+
+                <i class="fa-solid fa-circle-question"></i>
+
+                Help & Support
+
+            </a>
+
+
+            <a
+                href="#"
+                id="logoutBtn"
+            >
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                Logout
+
+            </a>
+
+
+        </nav>
+
+
+    </aside>
+
+
+    <!-- =========================================
+         MAIN CONTENT
+    ========================================== -->
+
+    <main class="main-content">
+
+
+        <!-- =====================================
+             HEADER
+        ====================================== -->
+
+        <header class="topbar">
+
+
+            <div>
+
+                <h1>
+                    Reports
+                </h1>
+
+                <p>
+                    Review your transaction and income reports.
+                </p>
+
+            </div>
+
+
+            <button
+                type="button"
+                id="refreshReports"
+                class="refresh-btn"
+            >
+
+                <i class="fa-solid fa-rotate"></i>
+
+                Refresh
+
+            </button>
+
+
+        </header>
+
+
+        <!-- =====================================
+             SUMMARY CARDS
+        ====================================== -->
+
+        <section class="report-summary">
+
+
+            <div class="report-card">
+
+                <div class="report-icon income">
+
+                    <i class="fa-solid fa-arrow-trend-up"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        Total Income
+                    </span>
+
+                    <strong id="reportTotalIncome">
+                        ₦0.00
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="report-card">
+
+                <div class="report-icon non-income">
+
+                    <i class="fa-solid fa-arrow-trend-down"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        Non-income
+                    </span>
+
+                    <strong id="reportNonIncome">
+                        ₦0.00
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="report-card">
+
+                <div class="report-icon pending">
+
+                    <i class="fa-solid fa-clock"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        Pending
+                    </span>
+
+                    <strong id="reportPending">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="report-card">
+
+                <div class="report-icon transactions">
+
+                    <i class="fa-solid fa-receipt"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        Transactions
+                    </span>
+
+                    <strong id="reportTransactionCount">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- =====================================
+             INCOME BREAKDOWN
+        ====================================== -->
+
+        <section class="report-section">
+
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>
+                        Income Overview
+                    </h2>
+
+                    <p>
+                        Your income compared with other classified transactions.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="overview-card">
+
+
+                <div class="overview-row">
+
+                    <div>
+
+                        <span>
+                            Income
+                        </span>
+
+                        <strong id="overviewIncome">
+                            ₦0.00
+                        </strong>
+
+                    </div>
+
+
+                    <div class="progress-container">
+
+                        <div
+                            class="progress-bar income-progress"
+                            id="incomeProgress"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="overview-row">
+
+                    <div>
+
+                        <span>
+                            Non-income
+                        </span>
+
+                        <strong id="overviewNonIncome">
+                            ₦0.00
+                        </strong>
+
+                    </div>
+
+
+                    <div class="progress-container">
+
+                        <div
+                            class="progress-bar non-income-progress"
+                            id="nonIncomeProgress"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+        <!-- =====================================
+             TRANSACTION REPORT
+        ====================================== -->
+
+        <section class="report-section">
+
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>
+                        Transaction Report
+                    </h2>
+
+                    <p>
+                        Detailed view of your recent transactions.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="report-table-container">
+
+
+                <table class="report-table">
+
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Transaction
+                            </th>
+
+                            <th>
+                                Amount
+                            </th>
+
+                            <th>
+                                Classification
+                            </th>
+
+                            <th>
+                                Date
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="reportTransactions">
+
+                        <tr>
+
+                            <td
+                                colspan="4"
+                                class="loading-cell"
+                            >
+
+                                <i class="fa-solid fa-spinner fa-spin"></i>
+
+                                Loading reports...
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+
+                </table>
+
+
+            </div>
+
+
+        </section>
+
+
+        <!-- =====================================
+             EMPTY STATE
+        ====================================== -->
+
+        <div
+            id="reportsEmpty"
+            class="reports-empty"
+            hidden
+        >
+
+            <div class="empty-icon">
+
+                <i class="fa-solid fa-chart-column"></i>
+
+            </div>
+
+            <h3>
+                No report data yet
+            </h3>
+
+            <p>
+                Add transactions to start generating reports.
+            </p>
+
+        </div>
+
+
+    </main>
+
+
+</div>
+
+
+<!-- =========================================
+     SCRIPTS
+========================================== -->
+
+
+<script
+    src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+></script>
+
+
+<script src="../js/supabase.js"></script>
+
+
+<script src="../js/reports.js"></script>
+
+
+</body>
+
+</html>

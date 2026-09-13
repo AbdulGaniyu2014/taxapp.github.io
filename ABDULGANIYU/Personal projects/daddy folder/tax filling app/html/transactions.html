@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Transactions | Tax Filing App</title>
+
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="../css/global.css">
+
+    <!-- Dashboard CSS -->
+    <link rel="stylesheet" href="../css/dashboard.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- =========================================
+         SIDEBAR
+    ========================================== -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <i class="fa-solid fa-file-invoice-dollar"></i>
+
+            <h2>Tax Filing</h2>
+
+        </div>
+
+
+        <nav>
+
+            <!-- Dashboard -->
+
+            <a href="dashboard.html">
+
+                <i class="fa-solid fa-house"></i>
+
+                <span>Dashboard</span>
+
+            </a>
+
+
+            <!-- Transactions -->
+
+            <a href="transactions.html" class="active">
+
+                <i class="fa-solid fa-money-bill-transfer"></i>
+
+                <span>Transactions</span>
+
+            </a>
+
+
+            <!-- Tax Calculator -->
+
+            <a href="tax-calculator.html">
+
+                <i class="fa-solid fa-calculator"></i>
+
+                <span>Tax Calculator</span>
+
+            </a>
+
+
+            <!-- Pending Classifications -->
+
+            <a href="pending-classifications.html">
+
+                <i class="fa-solid fa-folder-open"></i>
+
+                <span>Pending Classifications</span>
+
+            </a>
+
+
+            <!-- Reports -->
+
+            <a href="reports.html">
+
+                <i class="fa-solid fa-chart-line"></i>
+
+                <span>Reports</span>
+
+            </a>
+
+
+            <!-- Settings -->
+
+            <a href="settings.html">
+
+                <i class="fa-solid fa-gear"></i>
+
+                <span>Settings</span>
+
+            </a>
+
+
+            <!-- Help & Support -->
+
+            <a href="help-support.html">
+
+                <i class="fa-solid fa-circle-question"></i>
+
+                <span>Help & Support</span>
+
+            </a>
+
+
+            <!-- Logout -->
+
+            <a href="#" id="logoutBtn">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                <span>Logout</span>
+
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- =========================================
+         MAIN CONTENT
+    ========================================== -->
+
+    <main class="main-content">
+
+
+        <!-- TOP BAR -->
+
+        <header class="topbar">
+
+            <div>
+
+                <h1>Transactions</h1>
+
+                <p>
+                    Manage all your transactions.
+                </p>
+
+            </div>
+
+
+            <!-- New Transaction Button -->
+
+            <button
+                type="button"
+                class="primary-btn"
+                id="newTransactionBtn"
+            >
+
+                <i class="fa-solid fa-plus"></i>
+
+                New Transaction
+
+            </button>
+
+        </header>
+
+
+        <!-- =========================================
+             SUMMARY CARDS
+        ========================================== -->
+
+        <section class="cards">
+
+
+            <!-- Total Transactions -->
+
+            <div class="card">
+
+                <i class="fa-solid fa-wallet"></i>
+
+                <h3>Total Transactions</h3>
+
+                <p id="totalTransactions">
+                    0
+                </p>
+
+            </div>
+
+
+            <!-- Completed -->
+
+            <div class="card">
+
+                <i class="fa-solid fa-circle-check"></i>
+
+                <h3>Completed</h3>
+
+                <p id="completedTransactions">
+                    0
+                </p>
+
+            </div>
+
+
+            <!-- Pending -->
+
+            <div class="card">
+
+                <i class="fa-solid fa-clock"></i>
+
+                <h3>Pending</h3>
+
+                <p id="pendingTransactions">
+                    0
+                </p>
+
+            </div>
+
+
+            <!-- Total Amount -->
+
+            <div class="card">
+
+                <i class="fa-solid fa-naira-sign"></i>
+
+                <h3>Total Amount</h3>
+
+                <p id="totalAmount">
+                    ₦0.00
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             RECENT TRANSACTIONS
+        ========================================== -->
+
+        <section class="recent">
+
+            <h2>Recent Transactions</h2>
+
+
+            <div class="activity-box">
+
+                <table class="transaction-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>ID</th>
+
+                            <th>Date</th>
+
+                            <th>Amount</th>
+
+                            <th>Status</th>
+
+                            <th>Action</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="transactionTable">
+
+                        <tr>
+
+                            <td
+                                colspan="5"
+                                style="text-align:center;padding:40px;"
+                            >
+
+                                Loading transactions...
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+</div>
+
+
+<!-- =========================================
+     NEW TRANSACTION MODAL
+========================================== -->
+
+<div
+    class="modal-overlay"
+    id="transactionModal"
+>
+
+
+    <div class="transaction-modal">
+
+
+        <!-- Modal Header -->
+
+        <div class="modal-header">
+
+            <div>
+
+                <h2>
+                    New Transaction
+                </h2>
+
+                <p>
+                    Add a new transaction to your account.
+                </p>
+
+            </div>
+
+
+            <!-- Close Button -->
+
+            <button
+                type="button"
+                id="closeTransactionModal"
+                class="close-modal"
+                aria-label="Close"
+            >
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <!-- =========================================
+             TRANSACTION FORM
+        ========================================== -->
+
+        <form id="transactionForm">
+
+
+            <!-- Transaction Name -->
+
+            <div class="form-group">
+
+                <label for="transactionName">
+                    Transaction Name
+                </label>
+
+                <input
+                    type="text"
+                    id="transactionName"
+                    placeholder="e.g. Tax payment"
+                    autocomplete="off"
+                    required
+                >
+
+            </div>
+
+
+            <!-- Amount -->
+
+            <div class="form-group">
+
+                <label for="transactionAmount">
+                    Amount
+                </label>
+
+                <input
+                    type="number"
+                    id="transactionAmount"
+                    placeholder="0.00"
+                    min="0"
+                    step="0.01"
+                    required
+                >
+
+            </div>
+
+
+            <!-- Status -->
+
+            <div class="form-group">
+
+                <label for="transactionStatus">
+                    Status
+                </label>
+
+                <select id="transactionStatus">
+
+                    <option value="Pending">
+                        Pending
+                    </option>
+
+                    <option value="Completed">
+                        Completed
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Notes -->
+
+            <div class="form-group">
+
+                <label for="transactionNotes">
+                    Notes
+                </label>
+
+                <textarea
+                    id="transactionNotes"
+                    placeholder="Add any additional information..."
+                    rows="4"
+                ></textarea>
+
+            </div>
+
+
+            <!-- Modal Buttons -->
+
+            <div class="modal-actions">
+
+
+                <!-- Cancel -->
+
+                <button
+                    type="button"
+                    id="cancelTransaction"
+                    class="cancel-btn"
+                >
+
+                    Cancel
+
+                </button>
+
+
+                <!-- Save -->
+
+                <button
+                    type="submit"
+                    id="saveTransaction"
+                    class="save-btn"
+                >
+
+                    <i class="fa-solid fa-check"></i>
+
+                    Save Transaction
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================
+     SCRIPTS
+========================================== -->
+
+<!-- Supabase -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+<!-- Supabase Configuration -->
+
+<script src="../js/supabase.js"></script>
+
+
+<!-- Authentication -->
+
+<script src="../js/auth.js"></script>
+
+
+<!-- Transactions -->
+
+<script src="../js/transactions.js"></script>
+
+
+</body>
+
+</html>
+
